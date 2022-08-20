@@ -1,0 +1,82 @@
+/*
+COLORS
+
+Primary: #eb2f64
+Primary light: #FF3366
+Primary dark: #BA265D
+
+Grey light 1: #faf9f9
+Grey light 2: #f4f2f2
+Grey light 3: #f0eeee
+Grey light 4: #ccc
+
+Grey dark 1: #333
+Grey dark 2: #777
+Grey dark 3: #999
+
+*/
+
+//setting the variables in the root pseudoclass in order to use then in all the children
+:root{
+--color-primary: #eb2f64;
+--color-primary-light: #FF3366;
+--color-primary-dark: #BA265D;
+    
+    --color-grey-light-1: #faf9f9;
+    --color-grey-light-2: #f4f2f2;
+    --color-grey-light-3: #f0eeee;
+    --color-grey-light-4: #ccc;
+    
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+    
+    --shadow-dark:0 2rem 6rem rgba(0,0,0,.3);
+    --sahdow-light:0 2rem 5rem rgba(0,0,0, .06);
+    --line:1px solid var(--color-grey-light-2);
+}
+
+/// CANT USE CSS VARIABLES FOR MEDIA QUERIES.CSS DOEST ALLOW IT.
+/// USE SASS VARIABLE INSTEAD
+$bp-largest: 75em;     // 1200px/16
+$bp-large: 68.75em;    // 1100px/16
+$bp-medium: 56.25em;   // 900px/16
+$bp-small: 37.5em;     // 600px/16
+$bp-smallest: 31.25em; // 500px/16
+
+
+
+
+// selecting all with universal selector
+*{
+margin:0;
+padding: 0;
+}
+//now  making everithing inherit by using the universal selector
+*,
+*::before,
+*::after{
+box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    // global font size
+    font-size: 62.5%; // 1rem=10px 10px/16px(browser default)*100=62.5%
+    
+    @media only screen and (max-width:$bp-large){
+        font-size: 50%;
+    }
+}
+
+body{
+    font-family: "Open Sans",sans-serif;
+    font-weight: 400;
+    color:var(--color-grey-dark-2);
+    line-height: 1.6;
+    background-image: linear-gradient(to bottom right, var(--color-primary-light), var(--color-primary-dark));
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
